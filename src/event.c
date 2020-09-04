@@ -196,8 +196,8 @@ static void configure_win(session_t *ps, xcb_configure_notify_event_t *ce) {
 
 	auto mw = (struct managed_win *)w;
 
-	float t = get_time_ms();
-	if (mw->oldX == -10000 && mw->oldY == -10000 && mw->oldW == 0 && mw->oldH == 0) {
+	float t = get_time_40us();
+	if (mw->oldX == -500 && mw->oldY == -500 && mw->oldW == 0 && mw->oldH == 0) {
 		if (!mw->isOld) {
 			/* mw->isOld = true; */
 

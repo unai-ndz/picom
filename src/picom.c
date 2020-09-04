@@ -508,7 +508,7 @@ static struct managed_win *paint_preprocess(session_t *ps, bool *fade_running) {
 		     w->g.height != w->newH);
 
 		if (posChanged) {
-			float t = get_time_ms();
+			float t = get_time_40us();
 			float moveDx = (t - w->moveTimeX) / ps->o.transition_length;
 			float moveDy = (t - w->moveTimeY) / ps->o.transition_length;
 			float moveDw = (t - w->moveTimeW) / ps->o.transition_length;
