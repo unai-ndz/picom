@@ -126,7 +126,15 @@ static inline void free_xinerama_info(session_t *ps) {
 int64_t get_time_ms(void) {
 	struct timespec tp;
 	clock_gettime(CLOCK_MONOTONIC, &tp);
-	//	return (int64_t)tp.tv_sec * 1000 + (int64_t)tp.tv_nsec / 1000000;
+	return (int64_t)tp.tv_sec * 1000 + (int64_t)tp.tv_nsec / 1000000;
+}
+
+/**
+ * Get current system clock in 40 microseconds.
+ */
+int64_t get_time_40us(void) {
+	struct timespec tp;
+	clock_gettime(CLOCK_MONOTONIC, &tp);
 	return (int64_t)tp.tv_sec * 100 + (int64_t)tp.tv_nsec / 250000;
 }
 
